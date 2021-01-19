@@ -38,7 +38,7 @@ int main()
   my_SDL_init();
   
   SDL_Texture* my_texture = NULL;
-  SDL_Surface* temp = IMG_LOAD("");
+  SDL_Surface* temp = IMG_LOAD("/UnregisteredHypercam2.png");
 
   my_texture = SDL_CreateTextureFromSurface(my_renderer, temp);
 
