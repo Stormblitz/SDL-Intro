@@ -7,9 +7,7 @@
 #include <SDL2/SDL_image.h> 
 #include <SDL2/SDL_timer.h>
 
-//Screen dimension
-const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
+#include "engine.h"
 
 SDL_Window* my_window = NULL;
 SDL_Renderer* my_renderer = NULL;
@@ -35,10 +33,12 @@ void my_SDL_init(){
 
 int main() 
 { 
+  GameEngine* engine = new GameEngine();
+  
   my_SDL_init();
   
   SDL_Texture* my_texture = NULL;
-  SDL_Surface* temp = IMG_LOAD("/UnregisteredHypercam2.png");
+  SDL_Surface* temp = IMG_Load("./UnregisteredHypercam2.png");
 
   my_texture = SDL_CreateTextureFromSurface(my_renderer, temp);
 
@@ -46,12 +46,18 @@ int main()
 
   SDL_Rect rect;
   rect.x = 0;
-  rect.y = 250;
+  rect.y = 0;
   rect.w = 150;
   rect.h = 40;
 
   while(true){
     
+    start_time = SDL_GetTicks(); //Milliseconds since start of game
+    duration = SDL_GetTicks() - start_time;
+    if (duration < frame_duration){
+      SDL_Delay();
+    }
+
     SDL_RenderClear(my_renderer);
     SDL_RenderCopy(my_renderer, my_texture, NULL, &rect);
     SDL_RenderPresent(my_renderer);

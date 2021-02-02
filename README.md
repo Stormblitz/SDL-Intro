@@ -1,0 +1,2 @@
+A README should include information on how to run the program, e.g. the command name and any arguments that it takes.  It should also include a description of what the program does (this will be more important in future assignments but I would like you to get into the practice of writing such).  Any information that is pertinent - e.g. if there are any commands (awsd) or controls (e.g. in your game), these should be included.
+
