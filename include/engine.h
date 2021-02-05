@@ -9,7 +9,7 @@
 
 #include "player.h"
 
-enum GAME_STATE_ENUM = {INVALID = -1 , STOPPED = 0 , PAUSED = 1 , RUNNING = 2};
+enum GAME_STATE_ENUM {INVALID = -1 , STOPPED = 0 , PAUSED = 1 , RUNNING = 2};
 
 class GameEngine
 {

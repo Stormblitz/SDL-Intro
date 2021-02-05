@@ -55,7 +55,7 @@ void GameEngine::HandleEvents()
     SDL_Event gameEvent;
     SDL_PollEvent(&gameEvent);
 
-    if (gameEvent.type == SQL_QUIT) {
+    if (gameEvent.type == SDL_QUIT) {
         StopCurrentGame();
     }
     //if (gameEvent.type == SDL_KEYDOWN) {
@@ -74,7 +74,7 @@ void GameEngine::UpdateMechanics()
 void GameEngine::Render()
 {
     SDL_Surface* watermarkMeme = IMG_Load("./UnregisteredHypercam2.png");
-    SDL_Texture* watermarkMemeTexture = SDL_CreateTextureFromSurface(my_renderer, watermark);
+    SDL_Texture* watermarkMemeTexture = SDL_CreateTextureFromSurface(my_renderer, watermarkMeme);
 
     SDL_FreeSurface(watermarkMeme);
 
@@ -85,6 +85,6 @@ void GameEngine::Render()
     //rect.h = 40;
 
     SDL_RenderClear(my_renderer);
-    SDL_RenderCopy(my_renderer, my_texture, NULL, &rect);
+    SDL_RenderCopy(my_renderer, watermarkMemeTexture, NULL, &rect);
     SDL_RenderPresent(my_renderer);
 }
