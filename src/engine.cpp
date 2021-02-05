@@ -75,18 +75,32 @@ void GameEngine::UpdateMechanics()
 
 void GameEngine::Render()
 {
+    //SDL_Rect __ {x, y, w, h};
+
+    SDL_Surface* windowsBliss = IMG_Load("./WindowsBliss.jpg");
+    SDL_Texture* windowsBlissTexture = SDL_CreateTextureFromSurface(my_renderer, windowsBliss);
+    SDL_Rect windowsBlissRect {0, 0, SCREEN_WIDTH, SCREEN_HEIGHT};
+    SDL_FreeSurface(windowsBliss);
+
     SDL_Surface* watermarkMeme = IMG_Load("./UnregisteredHypercam2.png");
     SDL_Texture* watermarkMemeTexture = SDL_CreateTextureFromSurface(my_renderer, watermarkMeme);
-
+    SDL_Rect watermarkMemeRect {0, 0, 150, 40};
     SDL_FreeSurface(watermarkMeme);
 
-    SDL_Rect rect {0, 0, 150, 40};
-    //rect.x = 0;
-    //rect.y = 0;
-    //rect.w = 150;
-    //rect.h = 40;
+    SDL_Surface* droid = IMG_Load("./Droid.png");
+    SDL_Texture* droidTexture = SDL_CreateTextureFromSurface(my_renderer, droid);
+    SDL_Rect droidRect {20, SCREEN_HEIGHT - 99, 32, 32};
+    SDL_FreeSurface(droid);
 
     SDL_RenderClear(my_renderer);
-    SDL_RenderCopy(my_renderer, watermarkMemeTexture, NULL, &rect);
+
+    SDL_SetRenderDrawColor(my_renderer, 61, 40, 51, 255);
+    SDL_Rect platformRect (0, SCREEN_HEIGHT - 100, 100, 100);
+    SDL_RenderFillRect(my_renderer, &platformRect);
+
+    SDL_RenderCopy(my_renderer, windowsBlissTexture, NULL, &windowsBlissRect);
+    SDL_RenderCopy(my_renderer, watermarkMemeTexture, NULL, &watermarkMemeRect);
+    SDL_RenderCopy(my_renderer, droidTexture, NULL, &droidRect);
+    
     SDL_RenderPresent(my_renderer);
 }
