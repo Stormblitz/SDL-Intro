@@ -96,10 +96,10 @@ void GameEngine::Render()
 
     SDL_SetRenderDrawColor(my_renderer, 61, 40, 51, 255);
     SDL_Rect platformRect {0, SCREEN_HEIGHT - 100, 100, 100};
-    SDL_RenderFillRect(my_renderer, &platformRect);
 
     SDL_RenderCopy(my_renderer, windowsBlissTexture, NULL, &windowsBlissRect);
     SDL_RenderCopy(my_renderer, watermarkMemeTexture, NULL, &watermarkMemeRect);
+    SDL_RenderFillRect(my_renderer, &platformRect);
     SDL_RenderCopy(my_renderer, droidTexture, NULL, &droidRect);
     
     SDL_RenderPresent(my_renderer);
