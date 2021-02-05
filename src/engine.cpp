@@ -29,24 +29,24 @@ GameEngine::~GameEngine()
 
 GAME_STATE_ENUM GameEngine::GetCurrentGameState()
 {
-    (this->currentState < 0 || this->currentState > GAME_STATE_ENUM.RUNNING) ? 
-        return GAME_STATE_ENUM.INVALID : 
+    (this->currentState < 0 || this->currentState > RUNNING) ? 
+        return INVALID : 
         return this->currentState;
 } 
 
 void GameEngine::StopCurrentGame()
 {
-    currentState = GAME_STATE_ENUM.STOPPED;
+    currentState = STOPPED;
 }
 
 void GameEngine::PauseCurrentGame()
 {
-    currentState = GAME_STATE_ENUM.PAUSED;
+    currentState = PAUSED;
 }
 
 void GameEngine::RunCurrentGame()
 {
-    currentState = GAME_STATE_ENUM.RUNNING;
+    currentState = RUNNING;
 }
 
 void GameEngine::HandleEvents()

@@ -8,7 +8,7 @@ int main()
   int currentDuration = 0;
   int frameDuration = 0;
 
-  while(engine->GetCurrentGameState == GAME_STATE_ENUM.RUNNING){
+  while(engine->GetCurrentGameState == RUNNING){
     
     startTime = SDL_GetTicks(); //Milliseconds since start of game
 
