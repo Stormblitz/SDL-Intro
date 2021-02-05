@@ -89,13 +89,13 @@ void GameEngine::Render()
 
     SDL_Surface* droid = IMG_Load("./Droid.png");
     SDL_Texture* droidTexture = SDL_CreateTextureFromSurface(my_renderer, droid);
-    SDL_Rect droidRect {20, SCREEN_HEIGHT - 99, 32, 32};
+    SDL_Rect droidRect {20, SCREEN_HEIGHT - (99 + 32), 32, 32};
     SDL_FreeSurface(droid);
 
     SDL_RenderClear(my_renderer);
 
     SDL_SetRenderDrawColor(my_renderer, 61, 40, 51, 255);
-    SDL_Rect platformRect {0, SCREEN_HEIGHT - 100, 100, 100};
+    SDL_Rect platformRect {0, SCREEN_HEIGHT - 100, 400, 100};
 
     SDL_RenderCopy(my_renderer, windowsBlissTexture, NULL, &windowsBlissRect);
     SDL_RenderCopy(my_renderer, watermarkMemeTexture, NULL, &watermarkMemeRect);
