@@ -29,9 +29,9 @@ GameEngine::~GameEngine()
 
 GAME_STATE_ENUM GameEngine::GetCurrentGameState()
 {
-    (this->currentState < 0 || this->currentState > RUNNING) ? 
-        return INVALID : 
-        return this->currentState;
+    return (this->currentState < 0 || this->currentState > RUNNING) ? 
+        INVALID : 
+        this->currentState;
 } 
 
 void GameEngine::StopCurrentGame()
