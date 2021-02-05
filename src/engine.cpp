@@ -16,6 +16,8 @@ GameEngine::GameEngine()
 			       SCREEN_HEIGHT, 0);
 
   my_renderer = SDL_CreateRenderer(my_window,-1,0);
+
+  RunCurrentGame();
 }
 
 GameEngine::~GameEngine()
