@@ -95,7 +95,7 @@ void GameEngine::Render()
     SDL_RenderClear(my_renderer);
 
     SDL_SetRenderDrawColor(my_renderer, 61, 40, 51, 255);
-    SDL_Rect platformRect {0, SCREEN_HEIGHT - 100, 400, 100};
+    SDL_Rect platformRect {0, SCREEN_HEIGHT - 100, 300, 100};
 
     SDL_RenderCopy(my_renderer, windowsBlissTexture, NULL, &windowsBlissRect);
     SDL_RenderCopy(my_renderer, watermarkMemeTexture, NULL, &watermarkMemeRect);
