@@ -7,9 +7,11 @@ class Player
 {
 private:
 
-    Position position;
-
 public:
+
+    Position position;
+    int x_vel;
+    int y_vel;
 
     Player();
     ~Player();

@@ -17,6 +17,8 @@ GameEngine::GameEngine()
 
   my_renderer = SDL_CreateRenderer(my_window,-1,0);
 
+  player = new Player();
+
   RunCurrentGame();
 }
 
@@ -53,19 +55,38 @@ void GameEngine::RunCurrentGame()
 
 void GameEngine::HandleEvents()
 {
-    //Possibility of handling multiple events by popping 
     SDL_Event gameEvent;
-    SDL_PollEvent(&gameEvent);
+    while (SDL_PollEvent(&gameEvent))
+    {
+        if (gameEvent.type == SDL_QUIT) {
+            StopCurrentGame();
+        }
+        //if (gameEvent.type == SDL_KEYDOWN) {
+        //  switch ( gameEvent.key.keysym.sym ) {}
+        //      case SDLK_UP:
+        //          break;
+        //  }
+        //}
+        else { 
+            switch (event.key.keysym.sym)
+            {
+            case SDLK_w:
+                /* code */
+                break;
+            
+            case SDLK_a:
+                /* code */
+                break;
 
-    if (gameEvent.type == SDL_QUIT) {
-        StopCurrentGame();
+            case SDLK_d:
+                /* code */
+                break;
+
+            default:
+                break;
+            }
+        }
     }
-    //if (gameEvent.type == SDL_KEYDOWN) {
-    //  switch ( gameEvent.key.keysym.sym ) {}
-    //      case SDLK_UP:
-    //          break;
-    //  }
-    //}
 }
 
 void GameEngine::UpdateMechanics()

@@ -24,6 +24,9 @@ private:
     //1 second in MS divided by expected frame rate
     const int FRAME_DURATION = 1000 / 60; 
 
+    //Player Character
+    Player player;
+
 public:
 
     SDL_Window* my_window = NULL;
